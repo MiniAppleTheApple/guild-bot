@@ -18,7 +18,7 @@ class Guild:
 
     def add_member(self, member_id):
         if member_id not in self.members:
-            self.members.append(member)
+            self.members.append(member_id)
         return self
 
     def store(self):
@@ -34,10 +34,10 @@ class GuildTemplate:
         self.id = id
         self.members = []
 
-    def add_member(self, member):
-        if member not in self.members:
-            self.members.append(member)
+    def add_member(self, member_id):
+        if member_id not in self.members:
+            self.members.append(member_id)
         return self
-        
+
     def create(self):
-        return GuildTemplate(self.name, self.author_id, self.id, self.members)
+        return Guild(self.name, self.author_id, self.id, self.members)
